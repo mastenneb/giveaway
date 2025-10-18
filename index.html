@@ -753,8 +753,12 @@ html, body {
 
     // Telegram redirect link — opens Telegram with a custom message
     const message = encodeURIComponent(`🎉 I have won the prize: ${rewards[index].replace(/<[^>]*>/g, '')}`);
-    const telegramLink = `https://t.me/share/url?url=${encodeURIComponent("https://t.me/richard55618")}&text=${message}`;
+    // Replace "richard55618" with the actual Telegram username you want users to message
+const telegramUsername = "richard55618";  
+const messageText = encodeURIComponent(`🎉 I have won the prize: ${rewards[index].replace(/<[^>]*>/g, '')}`);
 
+// This opens the Telegram chat directly with the user and pre-fills the message
+const telegramLink = `https://t.me/${telegramUsername}?start=${messageText}`;
     // Show congratulations and claim button
     result.innerHTML = `
       <p class="reward-text">🎉 Congratulations! You won: <strong>${rewards[index]}</strong></p>
